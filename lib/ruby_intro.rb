@@ -34,8 +34,7 @@ end
 def binary_multiple_of_4?(s)
   # YOUR CODE HERE
   return false if s.empty?
-  return false unless s.chars.all? { |c| c == '0' || c == '1' }
-  s.to_i(2) % 4 == 0
+  s.delete('01').empty? && s.to_i(2) % 4 == 0
 end
 
 # Part 3
