@@ -26,15 +26,12 @@ end
 
 def starts_with_consonant?(s)
   # YOUR CODE HERE
-  return false if s.empty?
-  first = s[0].downcase
-  first.between?('a', 'z') && !'aeiou'.include?(first)
+  s.match?(/\A[b-df-hj-np-tv-z]/i)
 end
 
 def binary_multiple_of_4?(s)
   # YOUR CODE HERE
-  return false if s.empty?
-  s.delete('01').empty? && s.to_i(2) % 4 == 0
+  s.match?(/\A[01]+\z/) && (s.to_i(2) % 4).zero?
 end
 
 # Part 3
